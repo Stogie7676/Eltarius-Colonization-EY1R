@@ -6,7 +6,7 @@ volume = 0.5
 textcooldown = 300
 counter = 0
 --                                            JUST ADD "SONG.OGG" FILES BELOW AND COPY THE FILE IN THE "RADIO" FOLDER THE SCRIPT HANDLES THE REST
-songs ={"MOD/resources/snd/Radio_Static_Loop_04.ogg",
+songs ={"MOD/resources/snd/Radionoise.ogg",
         "MOD/resources/snd/Radionoise.ogg"}
 
 function init()
@@ -15,11 +15,11 @@ function init()
     channels[i] = LoadLoop(songs[i])
   end
   --songToPlay = math.random(#songs)
-  breakSound = LoadSound("radioBreaksSound.ogg")
+  breakSound = LoadSound("MOD/resources/snd/radioBreaksSound.ogg")
   nextSongSound = LoadSound("MOD/resources/snd/RadioNextSongSound.ogg")
   OnOffSound = LoadSound("MOD/resources/snd/radioONOFF")
   
-  myRadio = FindShape("myradio", true)
+  myRadio = FindShape("b1radio", true)
   powerbutton = FindShape("radiopowerbutton", true)
   myButtonGreen = FindShape("radioButtonGreen", true)
   myVolUp = FindShape("radiovolupbutton", true)
