@@ -6,8 +6,8 @@ volume = 0.5
 textcooldown = 300
 counter = 0
 --                                            JUST ADD "SONG.OGG" FILES BELOW AND COPY THE FILE IN THE "RADIO" FOLDER THE SCRIPT HANDLES THE REST
-songs ={"MOD/resources/snd/harryhouseknradio.ogg",
-        "MOD/resources/snd/harryhouseknradio.ogg"}
+songs ={"MOD/resources/snd/Radio_Static_Loop_04.ogg",
+        "MOD/resources/snd/Radionoise.ogg"}
 
 function init()
   channels = {}
@@ -17,7 +17,7 @@ function init()
   --songToPlay = math.random(#songs)
   breakSound = LoadSound("radioBreaksSound.ogg")
   nextSongSound = LoadSound("MOD/resources/snd/RadioNextSongSound.ogg")
-  OnOffSound = LoadSound("MOD/resources/snd/harryhouseknradioONOFF")
+  OnOffSound = LoadSound("MOD/resources/snd/radioONOFF")
   
   myRadio = FindShape("myradio", true)
   powerbutton = FindShape("radiopowerbutton", true)

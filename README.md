@@ -1,2 +1,0 @@
-# eltarius
-another teardown project
