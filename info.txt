@@ -1,0 +1,4 @@
+name = Eltarius Colonization: EL1-R
+author = Stogie7676, Deffcolony
+description = EL1-R is a research outpost on the planet of Eltarius, a planet of the Tarius Star System. EL1-R was decimated by a flooding caused by a collapse of a naturally formed dam.
+tags = map

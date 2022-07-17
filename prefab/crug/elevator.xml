@@ -1,0 +1,37 @@
+<scene id_="560039296" open_="true" version="0.8.0" shadowVolume="200 50 200">
+	<group id_="1634960896" name="Base scripts" pos="0.0 -0.2 0.0">
+		<script id_="413819552" pos="0.0 0.2 0.0" file="main.lua"/>
+		<script id_="1874575104" pos="0.0 0.2 0.0" file="sandbox.lua" param0="weather=false"/>
+	</group>
+	<group id_="1378240640" name="Scene" pos="0.0 -0.2 0.0">
+		<environment id_="1711577088" name="Night time environment" template="night" pos="0.0 0.2 0.0" ambience=" "/>
+		<spawnpoint id_="380590784" name="Player spawn point" pos="-3.0 0.4 2.4" rot="0.0 -180.0 0.0"/>
+		<voxbox id_="1546088576" name="Ground" pos="-25.0 0.2 -25.0" size="500 1 500"/>
+		<voxbox id_="938598336" pos="-7.1 0.3 -8.3" rot="0.0 0.0 0.0" size="10 5 20"/>
+		<voxbox id_="78320304" pos="-6.1 0.3 -8.3" rot="0.0 0.0 0.0" size="10 10 20"/>
+		<voxbox id_="1243031680" pos="-5.1 0.3 -8.3" rot="0.0 0.0 0.0" size="10 15 20"/>
+		<voxbox id_="954721152" pos="-4.1 0.3 -8.3" rot="0.0 0.0 0.0" size="40 20 20"/>
+		<vox id_="1533963648" pos="-5.4 0.3 -4.9" rot="0.0 0.0 0.0" file="MOD/vox/lamppost1.vox">
+			<light id_="492467552" pos="-0.05 3.75 -0.15" rot="0.0 0.0 0.0" color="1 .7 .5" scale="3" size="0.3"/>
+		</vox>
+		<vox id_="1010757888" pos="0.9 0.3 -5.0" rot="0.0 30.0 0.0" prop="true" file="MOD/vox/crate.vox" object="medium"/>
+		<vox id_="54594820" pos="1.2 0.3 -3.4" rot="0.0 -30.0 0.0" prop="true" file="MOD/vox/crate.vox" object="small"/>
+	</group>
+	<script id_="768522048" name="Elevator" pos="-1.9 -0.2 -5.5" rot="0.0 0.0 0.0" file="MOD/script/elevator.lua">
+		<body id_="2043864960" name="Elevator body" tags="elevator" pos="0.0 0.2 0.8" dynamic="true">
+			<joint id_="1137053440" name="Prismatic joint" tags="joint" pos="0.0 0.1 -0.1" rot="-90.0 0.0 0.0" type="prismatic" limits="0 1.8"/>
+			<voxbox id_="1453218432" name="Pillar" pos="-0.2 -1.8 -0.3" size="4 20 4" pbr=".5 1 1 0"/>
+			<voxbox id_="468414368" name="Floor" pos="-1.5 0.2 -1.5" size="30 1 30"/>
+			<voxbox id_="581864128" name="Pole" pos="1.1 0.3 -1.5" size="2 14 1"/>
+			<voxbox id_="1506830080" name="Plate" pos="1.0 1.3 -1.4" size="4 7 1"/>
+			<voxbox id_="602050432" name="Up button" tags="up interact=Up" pos="1.1 1.7 -1.3" size="2 2 1" color="1 .5 0" pbr="0 0 0 2">
+				<light id_="366237504" pos="0.1 0.1 0.1" type="area" color="1 .5 0" size="0.2 0.2"/>
+			</voxbox>
+			<voxbox id_="1110968576" name="Down button" tags="down interact=Down" pos="1.1 1.4 -1.3" size="2 2 1" color=".5 1 .5" pbr="0 0 0 2">
+				<light id_="2004803072" pos="0.1 0.1 0.1" type="area" color=".5 1 .5" size="0.2 0.2"/>
+			</voxbox>
+		</body>
+	</script>
+	<layers/>
+</scene>
+
