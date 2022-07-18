@@ -1,63 +1,58 @@
---PC States:
+--TV States:
 
 --0: off
 --1: on
 
 function init()
-	pc = FindShape("b1pc")
-	pcBody = FindBody("b1pc")
+	minitv = FindShape("b1pc")
+	minitvBody = FindBody("b1pc")
+	light = FindLight("b1pcspeaker")
 	
-	pcPos = GetBodyTransform(pcBody).pos
-	
-	SetTag(pc, "interact", "Turn on/off")
-	
-	monitor  = FindShape("b1pcmonitor")
-	
-	monitorScreen = FindScreen("b1pcscreen")
-	
-	pcOff = LoadSound("MOD/resources/snd/b1pcoff.ogg")
-	pcLoop = LoadLoop("MOD/resources/snd/b1pcrun.ogg")
-	pcStart = LoadSound("MOD/resources/snd/b1pcstart.ogg")
-	
-	SetInt("pcState", 0)
+	miniTVscreen = FindScreen("b1pcscreen")
 	
 
-	played = false
+	playing = false
 end
 
 function tick(dt)
-	if GetBool("savegame.mod.Fernwaybreaker") == true then
-		if GetPlayerInteractShape() == pc and InputPressed("interact") then
-			if GetInt("pcState") == 0 then
-				PlaySound(pcStart, pcPos, 0.15)
-				SetInt("pcState", 1)
-			elseif GetInt("pcState") > 0 then
-				PlaySound(pcOff, pcPos, 0.15)
-				SetInt("pcState", 0)
-			end
-			if IsScreenEnabled(monitorScreen) == false then
-				SetScreenEnabled(monitorScreen, true)
-			elseif IsScreenEnabled(monitorScreen) == true then
-				SetScreenEnabled(monitorScreen, false)
-			end
-		end
-		if GetPlayerInteractShape() == monitor and InputPressed("interact") then
-			if GetPlayerScreen() ~= monitorScreen then 
-				SetPlayerScreen(monitorScreen)
-			end
-		end
-		if GetPlayerScreen() == monitorScreen then
-			RemoveTag(monitor, "interact")
+	local minitvPos = GetShapeWorldTransform(minitv).pos
+	
+	if GetPlayerInteractShape() == minitv and InputPressed("interact") then
+		if not playing then
+			playing = true
 		else
-			SetTag(monitor, "interact", "Browse")
+			playing = false
 		end
+		if IsScreenEnabled(miniTVscreen) == false then
+			SetScreenEnabled(miniTVscreen, true)
+		elseif IsScreenEnabled(miniTVscreen) == true then
+			SetScreenEnabled(miniTVscreen, false)
+		end
+	end
+	if GetPlayerInteractShape() == monitor and InputPressed("interact") then
+		if GetPlayerScreen() ~= miniTVscreen then 
+			SetPlayerScreen(miniTVscreen)
+		end
+	end
+	if GetPlayerScreen() == miniTVscreen then
+		RemoveTag(monitor, "interact")
+	else
+		SetTag(monitor, "interact", "WATCH")
+	end
+
+	
+	if not playing then
+		SetTag(minitv, "interact", "Turn On")
+		SetFloat("loadTime", 0)
+	else
+		SetTag(minitv, "interact", "Turn Off")
 	end
 	
-	if GetInt("pcState") == 0 then
-		SetFloat("loadTime", 0)
-	elseif GetInt("pcState") > 0 then
-		PlayLoop(pcLoop, pcPos, 0.15)
+	if IsShapeBroken(minitv) then
+		RemoveTag(minitv, "interact")
 	end
+	
+	SetLightEnabled(light, playing)
 end
 
 --Another truly awful script by Murdoc.
