@@ -28,7 +28,7 @@
 			<vox pos="-5.2 -1.1 -2.5" file="MOD/vox/modules.vox" object="base1">
 				<script name="b1tvremote" pos="-1.9 3.1 0.6" file="MOD/resources/scripts/minitvremote.lua">
 					<vox name="b1tv" tags="b1tv" pos="-0.5 0.3 0.0" rot="-30.0 -90.0 0.0" density="4" strength="3" file="MOD/vox/props.vox" object="tv">
-						<screen name="b1tv screen" tags="b1tvscreen" pos="0.05 0.65 -0.25" rot="0.0 -180.0 0.0" size="1.35 .9" bulge="0" resolution="1600 1000" script="MOD/resources/scripts/minitvscreen.lua" emissive="0.5" fxraster="0" fxnoise="0"/>
+						<screen name="b1tv screen" tags="b1tvscreen" pos="0.05 0.65 -0.25" rot="0.0 -180.0 0.0" size="1.35 .9" bulge="0" resolution="600 400" script="MOD/resources/scripts/tvImage2.lua" emissive="0.5" fxraster="0" fxnoise="0"/>
 						<light name="b1tv speakers" tags="b1tvspeaker" pos="0.0 0.4 -0.3" scale="0" unshadowed="4" sound="MOD/resources/snd/radiotrack1.ogg 0.7"/>
 						<rope name="b1tv cable" pos="-0.3 -0.3 -0.2" slack="0.2" strength="18" maxstretch="0.2">
 							<location pos="0.0 0.3 0.0" rot="0.0 0.0 0.0"/>
@@ -49,21 +49,10 @@
 				<vox pos="-7.6 1.1 -1.5" rot="0.0 50.0 0.0" desc="Touch-Tone Telephone" prop="true" file="MOD/vox/props.vox" object="touchtonetelephone"/>
 				<vox pos="-7.6 1.1 -2.9" rot="0.0 140.0 0.0" prop="true" file="MOD/vox/props.vox" object="cup"/>
 				<vox pos="-4.1 -0.1 -2.4" rot="0.0 150.0 0.0" prop="true" file="MOD/vox/props.vox" object="chair"/>
-				<script name="b1pc2remote" pos="-3.9 -0.1 -4.1" file="MOD/resources/scripts/b1pcremote2.lua">
-					<vox name="b1pc2" tags="b1pc2" pos="-0.2 0.0 0.3" rot="0.0 150.0 0.0" density="4" strength="3" prop="true" file="MOD/vox/props.vox" object="terminalstand">
-						<vox pos="-0.0 1.0 -0.3" rot="-20.0 0.0 0.0" prop="false" file="MOD/vox/props.vox" object="keyboard"/>
-						<screen name="b1pc2 screen" tags="b1pc2screen" pos="-0.0 1.8 -0.05" rot="0.0 -180.0 0.0" size="0.6 0.4" bulge="0.01" resolution="1200 1000" script="MOD/resources/scripts/b1pcscreen2.lua" emissive="0.5" fxraster="0.1" fxnoise="0.5"/>
-						<light name="b1pc2 speakers" tags="b1pc2speaker" pos="0.0 1.2 0.0" scale="0" unshadowed="4" sound="MOD/resources/snd/computanoise.ogg"/>
-						<rope name="cable" slack="0.7" strength="18" maxstretch="0.2">
-							<location pos="0.0 1.2 0.2" rot="0.0 0.0 0.0"/>
-							<location pos="0.3 0.7 1.2" rot="0.0 0.0 0.0"/>
-						</rope>
-					</vox>
-				</script>
 				<script name="b1pc" pos="-7.5 1.1 -3.6" file="MOD/resources/scripts/b1pc.lua">
 					<vox name="b1pc computer" tags="b1pc" pos="0.0 0.0 0.0" rot="0.0 -110.0 0.0" density="4" strength="3" prop="true" file="MOD/vox/props.vox" object="computerbits">
 						<vox name="b1pc monitor" tags="b1pcmonitor" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1600 1000" script="MOD/resources/scripts/b1pcscreen.lua" emissive="0.5" fxraster="0" fxnoise="0"/>
+							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="600 400" script="MOD/resources/scripts/tvImage2.lua" emissive="0.5" fxraster="0" fxnoise="0"/>
 							<light name="b1pc speakers" tags="b1pcspeaker" pos="0.0 -0.2 0.0" scale="0" unshadowed="4" sound="MOD/resources/snd/b1pcrun.ogg 0.5"/>
 						</vox>
 						<vox pos="0.0 0.1 -0.0" rot="0.0 0.0 0.0" desc="Interstellar" prop="true" file="MOD/vox/props.vox" object="holo2001"/>
@@ -71,6 +60,18 @@
 							<location pos="-0.3 0.1 -0.4" rot="0.0 0.0 0.0"/>
 							<location pos="-1.2 0.8 0.0" rot="0.0 0.0 0.0"/>
 						</rope>
+					</vox>
+				</script>
+				<script name="b1pc" pos="-4.1 -0.1 -3.8" rot="0.0 -110.0 0.0" file="MOD/resources/scripts/b1pc.lua">
+					<vox name="b1pc computer" tags="b1pc" pos="0.0 0.0 0.0" rot="0.0 -110.0 0.0" density="4" strength="3" prop="true" file="MOD/vox/props.vox" object="terminalstand">
+						<vox name="b1pc monitor" tags="b1pcmonitor" pos="0.0 1.2 -0.3" rot="-20.0 0.0 0.0" file="MOD/vox/props.vox" object="keyboard">
+							<light name="b1pc speakers" tags="b1pcspeaker" pos="-0.0 0.1 0.5" scale="0" unshadowed="4" sound="MOD/resources/snd/b1pcrun.ogg 0.5"/>
+						</vox>
+						<rope name="b1pc cable" pos="0.0 0.0 0.7" slack="0.7" strength="18" maxstretch="0.2">
+							<location pos="-0.3 0.1 -0.4" rot="0.0 0.0 0.0"/>
+							<location pos="-1.2 0.8 0.0" rot="0.0 0.0 0.0"/>
+						</rope>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 1.8 -0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" emissive="0.5" fxraster="0" fxnoise="0"/>
 					</vox>
 				</script>
 				<vox tags="unbreakable" pos="-10.5 -0.5 -2.9" rot="0.0 160.0 -5.0" prop="true" file="MOD/vox/props.vox" object="terminalstand">
@@ -201,22 +202,24 @@
 					<vox pos="-0.85762 0.50004 -2.12196" rot="180.0 -34.1 0.0" prop="true" file="MOD/vox/props.vox" object="holotape"/>
 					<vox pos="-1.95347 0.6177 -2.16081" rot="82.0 -39.1 -62.1" desc="Ryan's Helmet" prop="true" file="MOD/vox/props.vox" object="helmet"/>
 					<vox pos="-1.461 0.509 -2.29" rot="-49.1 53.6 -1.0" desc="Valentina's Helmet" prop="true" file="MOD/vox/props.vox" object="helmet"/>
-					<vox tags="unbreakable" pos="-1.191 1.393 -1.747" rot="-117.5 80.2 16.3" desc="Strange Tablet..." prop="true" file="MOD/vox/alien.vox" object="C"/>
+					<vox tags="unbreakable" pos="-1.191 1.393 -1.747" rot="-117.5 80.2 16.3" desc="Strange Tablet..." prop="true" file="MOD/vox/alien.vox" object="C">
+						<light pos="0.0 0.4 0.0" scale="0" sound="MOD/resources/snd/pulsar.ogg 0.1"/>
+					</vox>
 					<vox pos="-1.57393 0.2 -1.89836" rot="0.0 144.8 0.0" prop="true" file="MOD/vox/props.vox" object="box"/>
 					<vox pos="0.3973 0.80228 -3.40756" rot="90.0 139.89999 -0.1" prop="true" file="MOD/vox/props.vox" object="desk"/>
 					<vox pos="0.297 1.702 6.392" rot="0.0 30.0 90.0" file="MOD/vox/props.vox" object="desk"/>
 					<vox pos="-0.003 4.802 6.092" rot="0.0 70.0 90.0" file="MOD/vox/props.vox" object="desk"/>
 					<vox tags="unbreakable" pos="1.7 0.20005 -1.10002" rot="0.0 120.0 0.0" prop="true" file="MOD/vox/props.vox" object="terminalstand">
 						<vox pos="-0.0 1.0 -0.3" rot="-20.0 0.0 0.0" prop="false" file="MOD/vox/props.vox" object="keyboard"/>
-						<vox pos="0.0 1.75 0.0" rot="0.0 -90.0 90.0" prop="false" file="MOD/vox/computerstuff.vox" object="screen" scale=".35"/>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 1.8 -0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 					</vox>
 					<vox tags="unbreakable" pos="-0.2 6.4 6.7" rot="0.0 40.0 0.0" file="MOD/vox/props.vox" object="terminalstand">
 						<vox pos="-0.0 1.0 -0.3" rot="-20.0 0.0 0.0" prop="false" file="MOD/vox/props.vox" object="keyboard"/>
-						<vox pos="0.0 1.75 0.0" rot="0.0 -90.0 90.0" prop="false" file="MOD/vox/computerstuff.vox" object="screen" scale=".35"/>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 1.8 -0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 					</vox>
 					<vox pos="2.09995 1.40005 0.49999" rot="0.0 80.0 0.0" prop="true" file="MOD/vox/props.vox" object="computerbits">
 						<vox tags="unbreakable" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-							<vox pos="0.0 0.45 0.1" rot="90.0 180.0 0.0" file="MOD/vox/computerstuff.vox" object="tvsintersteller" scale=".15"/>
+							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage2.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 						</vox>
 						<rope pos="0.0 0.2 0.4" rot="0.0 -90.0 0.0" size="1" slack=".15" maxstretch="25">
 							<location pos="0.0 0.0 0.0" rot="0.0 0.0 0.0"/>
@@ -236,8 +239,8 @@
 					</vox>
 					<vox pos="-1.48439 0.29988 -1.63047" rot="0.0 53.6 0.0" desc="Hardrive must be important..." prop="true" file="MOD/vox/props.vox" object="computerbits"/>
 					<vox tags="unbreakable" pos="1.2 1.6 2.5" rot="0.0 70.0 0.0" prop="true" file="MOD/vox/props.vox" object="terminal2">
-						<vox pos="0.0 0.45 0.1" rot="0.0 270.0 90.0" file="MOD/vox/computerstuff.vox" object="screen2" scale=".35"/>
 						<vox pos="-0.0 0.1 0.15" rot="0.0 0.0 0.0" file="MOD/vox/props.vox" object="terminalboard" scale=".5"/>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage3.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 					</vox>
 					<vox pos="-0.8 2.8 6.7" rot="2.5 61.5 9.8" file="MOD/vox/modules.vox" object="metal part"/>
 					<vox pos="-0.6 2.9 7.1" rot="2.5 151.5 9.8" file="MOD/vox/modules.vox" object="metal part"/>
@@ -323,19 +326,19 @@
 					</vox>
 					<vox pos="0.6 1.3 1.0" rot="0.0 80.0 0.0" prop="true" file="MOD/vox/props.vox" object="computerbits">
 						<vox tags="unbreakable" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-							<vox pos="0.0 0.45 0.1" rot="0.0 -90.0 90.0" file="MOD/vox/computerstuff.vox" object="screended" scale=".35"/>
+							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage4.lua" enabled="true" emissive="0.5" fxraster="0" fxca="5" fxnoise="1.5" fxglitch="1"/>
 						</vox>
 					</vox>
 					<vox pos="0.8 1.3 -0.8" rot="0.0 110.0 0.0" prop="true" file="MOD/vox/props.vox" object="computerbits">
 						<vox tags="unbreakable" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-							<vox pos="0.0 0.45 0.1" rot="0.0 -90.0 90.0" file="MOD/vox/computerstuff.vox" object="screended" scale=".35"/>
+							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage4.lua" enabled="true" emissive="0.5" fxraster="0" fxca="5" fxnoise="1.5" fxglitch="1"/>
 						</vox>
 					</vox>
 					<vox pos="-0.4 0.1 -0.5" rot="0.0 120.0 0.0" prop="true" file="MOD/vox/props.vox" object="chair"/>
 					<vox pos="-2.0 2.3 -0.3" rot="0.0 170.0 0.0" desc="Lazco Poster" prop="true" file="MOD/vox/props.vox" object="lazcoposter"/>
 					<vox pos="3.2 1.3 -8.0" rot="0.0 -170.0 0.0" prop="true" file="MOD/vox/props.vox" object="computerbits">
 						<vox tags="unbreakable" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-							<vox pos="0.0 0.45 0.1" rot="0.0 -90.0 90.0" file="MOD/vox/computerstuff.vox" object="screended" scale=".35"/>
+							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage4.lua" enabled="true" emissive="0.5" fxraster="0" fxca="5" fxnoise="1.5" fxglitch="1"/>
 						</vox>
 					</vox>
 					<vox pos="-0.2 0.1 -11.3" rot="0.0 90.0 0.0" prop="true" file="MOD/vox/props.vox" object="chair"/>
@@ -361,15 +364,15 @@
 					</vox>
 					<vox pos="-1.0 0.6 -11.6" rot="-175.10001 -44.9 -88.3" prop="true" file="MOD/vox/props.vox" object="computerbits">
 						<vox pos="-0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-							<vox pos="0.0 0.45 0.1" rot="0.0 -90.0 90.0" file="MOD/vox/computerstuff.vox" object="screended" scale=".35"/>
+							<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage4.lua" enabled="true" emissive="0.5" fxraster="0" fxca="5" fxnoise="1.5" fxglitch="1"/>
 						</vox>
 					</vox>
 					<vox pos="-0.4 0.1 -13.4" rot="0.0 -40.0 0.0" prop="true" file="MOD/vox/props.vox" object="chair"/>
 					<vox pos="4.3 0.1 -3.5" rot="0.0 90.0 0.0" file="MOD/vox/modules.vox" object="desk1"/>
 					<vox pos="4.6 0.1 -8.1" rot="0.0 -90.0 0.0" file="MOD/vox/modules.vox" object="desk1"/>
 					<vox tags="unbreakable" pos="-6.0 0.1 -12.5" rot="0.0 160.0 0.0" prop="true" file="MOD/vox/props.vox" object="terminalstand">
-						<vox pos="0.0 1.75 0.0" rot="0.0 -90.0 90.0" file="MOD/vox/computerstuff.vox" object="screended" scale=".35"/>
 						<vox pos="0.0 1.0 -0.3" rot="30.0 -180.0 0.0" file="MOD/vox/props.vox" object="keyboard"/>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="-0.0 1.8 -0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage4.lua" enabled="true" emissive="0.5" fxraster="0" fxca="5" fxnoise="1.5" fxglitch="1"/>
 					</vox>
 					<vox pos="-6.0 0.1 -11.2" rot="0.0 180.0 0.0" prop="true" file="MOD/vox/props.vox" object="chair"/>
 					<vox pos="-8.8 0.1 -11.5" rot="0.0 40.0 0.0" prop="true" file="MOD/vox/props.vox" object="oxymaker">
@@ -576,7 +579,7 @@
 			</vox>
 			<vox pos="-0.2 -3.0 -6.0" rot="0.0 -180.0 0.0" file="MOD/vox/modules.vox" object="base1">
 				<vox tags="unbreakable" pos="-2.4 3.4 0.6" rot="-30.0 -90.0 0.0" file="MOD/vox/props.vox" object="tv">
-					<vox pos="0.05 0.65 -0.2" rot="90.0 -180.0 0.0" file="MOD/vox/computerstuff.vox" object="tvscreen" scale=".5"/>
+					<screen name="b1tv screen" tags="b1tvscreen" pos="0.05 0.65 -0.25" rot="0.0 -180.0 0.0" size="1.35 .9" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage5.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 				</vox>
 				<vox pos="-0.0 4.8 -0.1" file="MOD/vox/modules.vox" object="light">
 					<light pos="0.0 0.0 -0.05" color="0.23 0.73 1.0" scale="5" size=".2" reach="3"/>
@@ -588,7 +591,7 @@
 			</vox>
 			<vox pos="-0.2 -3.0 -0.1" rot="0.0 -180.0 0.0" file="MOD/vox/modules.vox" object="base2">
 				<vox tags="unbreakable" pos="-2.4 3.4 0.6" rot="-26.5 -89.7 -9.4" file="MOD/vox/props.vox" object="tv">
-					<vox pos="0.05 0.65 -0.2" rot="90.0 -180.0 0.0" file="MOD/vox/computerstuff.vox" object="tvscreenbroke" scale=".5"/>
+					<screen name="b1tv screen" tags="b1tvscreen" pos="0.05 0.65 -0.25" rot="0.0 -180.0 0.0" size="1.35 .9" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage5.lua" enabled="true" emissive="0.5" fxraster="0" fxca="20" fxnoise=".5"/>
 				</vox>
 				<vox pos="0.0 1.2 -2.7" prop="false" file="MOD/vox/modules.vox" object="airlockdoor"/>
 				<vox pos="-2.3 1.0 -0.2" prop="false" file="MOD/vox/modules.vox" object="desk1"/>
@@ -601,12 +604,12 @@
 				<vox pos="-1.5 -2.0 -4.7" rot="0.0 -120.0 0.0" prop="true" file="MOD/vox/props.vox" object="chair"/>
 				<vox pos="2.0 -0.8 1.2" rot="0.0 80.0 0.0" prop="true" file="MOD/vox/props.vox" object="computerbits">
 					<vox tags="unbreakable" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-						<vox pos="0.0 0.45 0.1" rot="0.0 270.0 90.0" file="MOD/vox/computerstuff.vox" object="screen" scale=".35"/>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 					</vox>
 				</vox>
 				<vox pos="2.0 -0.8 -4.4" rot="0.0 50.0 0.0" prop="true" file="MOD/vox/props.vox" object="computerbits">
 					<vox tags="unbreakable" pos="0.0 0.4 0.0" rot="-10.0 0.0 0.0" file="MOD/vox/props.vox" object="terminal">
-						<vox pos="0.0 0.45 0.1" rot="0.0 270.0 90.0" file="MOD/vox/computerstuff.vox" object="screen" scale=".35"/>
+						<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 0.5 0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 					</vox>
 				</vox>
 				<vox tags="unbreakable" pos="1.9 -0.8 -0.3" rot="0.0 -110.0 0.0" desc="[LOG1_Valentina D14] When we first landed here, we found a tall monolith-like structure with golden engravings. Lying on the ground next to it was a hexagonal tablet that had a symbol on it. The symbol looks to be on the monolith as well." prop="true" file="MOD/vox/props.vox" object="altpda">
@@ -637,7 +640,7 @@
 				<vox pos="-0.003 4.802 6.092" rot="0.0 70.0 90.0" file="MOD/vox/props.vox" object="desk"/>
 				<vox tags="unbreakable" pos="-0.2 6.4 6.7" rot="0.0 40.0 0.0" file="MOD/vox/props.vox" object="terminalstand">
 					<vox pos="-0.0 1.0 -0.3" rot="-20.0 0.0 0.0" prop="false" file="MOD/vox/props.vox" object="keyboard"/>
-					<vox pos="0.0 1.75 0.0" rot="0.0 -90.0 90.0" prop="false" file="MOD/vox/computerstuff.vox" object="screen" scale=".35"/>
+					<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 1.8 -0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 				</vox>
 				<vox pos="-0.8 2.8 6.7" rot="2.5 61.5 9.8" file="MOD/vox/modules.vox" object="metal part"/>
 				<vox pos="-0.6 2.9 7.1" rot="2.5 151.5 9.8" file="MOD/vox/modules.vox" object="metal part"/>
@@ -652,7 +655,9 @@
 			</group>
 		</group>
 		<group name="C">
-			<vox tags="unbreakable" pos="82.2 5.5 -27.3" rot="9.9 80.1 -1.7" desc="That does not look Human." prop="false" file="MOD/vox/alien.vox" object="Monolith"/>
+			<vox tags="unbreakable" pos="82.2 5.5 -27.3" rot="9.9 80.1 -1.7" desc="That does not look Human." prop="false" file="MOD/vox/alien.vox" object="Monolith">
+				<light pos="0.0 1.5 0.0" scale="0" sound="MOD/resources/snd/pulsar.ogg 0.5"/>
+			</vox>
 			<group pos="-20.8 0.0 -27.5">
 				<vox tags="unbreakable" pos="-1.3 -1.8 -0.2" rot="0" prop="false" file="MOD/vox/alien.vox" object="opening"/>
 				<vox tags="unbreakable" pos="20.8 -6.5 8.8" rot="90.0 -90.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
@@ -687,12 +692,14 @@
 				<vox tags="unbreakable" pos="7.29996 -1.8 -0.39997" rot="-180.0 90.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
 				<vox tags="unbreakable" pos="16.19997 -1.8 -0.39997" rot="-180.0 90.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
 				<vox tags="unbreakable" pos="7.39996 -8.2 -0.39997" rot="0.0 0.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3">
-					<trigger pos="0.2 -0.9 4.5" type="box" size="30 7 20" sound="MOD/resources/snd/INT_rain_on_roof.ogg"/>
+					<trigger pos="0.2 -0.9 4.5" type="box" size="30 7 20" sound="MOD/resources/snd/INT_noisy_room.ogg"/>
 				</vox>
 				<vox tags="unbreakable" pos="7.39996 -6.49999 -5.09999" rot="90.0 0.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
 				<vox tags="unbreakable" pos="-1.30006 -6.49999 -5.09999" rot="90.0 0.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
 				<vox tags="unbreakable" pos="16.09997 -8.2 -0.39997" rot="0.0 0.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
-				<vox tags="unbreakable" pos="16.1 -6.9 -0.8" rot="90.0 -30.0 0.0" prop="true" file="MOD/vox/alien.vox" object="C"/>
+				<vox tags="unbreakable" pos="16.1 -6.9 -0.8" rot="90.0 -30.0 0.0" prop="true" file="MOD/vox/alien.vox" object="C">
+					<light pos="0.0 0.5 0.0" scale="0" sound="MOD/resources/snd/pulsar.ogg 0.1"/>
+				</vox>
 				<vox tags="unbreakable" pos="4.0 -6.9 -0.4" rot="0.0 0.0 0.0" prop="true" file="MOD/vox/alien.vox" object="plate">
 					<vox tags="unbreakable" pos="0.02 0.09 0.0" rot="0.0 90.0 0.0" file="MOD/vox/alien.vox" object="aliensuit" scale=".25"/>
 				</vox>
@@ -716,7 +723,7 @@
 				</vox>
 				<vox tags="unbreakable" pos="19.3 -8.0 4.2" rot="0.0 0.0 0.0" file="MOD/vox/alien.vox" object="console">
 					<vox tags="unbreakable" pos="-1.2 0.6 0.0" rot="0.0 0.0 30.0" file="MOD/vox/alien.vox" object="keyboard"/>
-					<vox tags="unbreakable" pos="0.1 2.4 0.0" rot="0.0 0.0 90.0" file="MOD/vox/props.vox" object="alienscreen"/>
+					<vox tags="unbreakable" pos="0.1 2.4 0.0" rot="0.0 0.0 90.0" desc="Ive seen this symbol on those tablets..." file="MOD/vox/props.vox" object="alienscreen"/>
 				</vox>
 				<vox tags="unbreakable" pos="20.79999 -6.5 -0.39997" rot="0.0 360.0 90.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
 				<vox tags="unbreakable" pos="16.09997 -6.49999 -5.09999" rot="90.0 0.0 0.0" prop="false" file="MOD/vox/alien.vox" object="wall3x3"/>
@@ -759,7 +766,7 @@
 			<vox pos="-0.003 4.802 6.092" rot="0.0 70.0 90.0" file="MOD/vox/props.vox" object="desk"/>
 			<vox tags="unbreakable" pos="-0.2 6.4 6.7" rot="0.0 40.0 0.0" file="MOD/vox/props.vox" object="terminalstand">
 				<vox pos="-0.0 1.0 -0.3" rot="-20.0 0.0 0.0" prop="false" file="MOD/vox/props.vox" object="keyboard"/>
-				<vox pos="0.0 1.75 0.0" rot="0.0 -90.0 90.0" prop="false" file="MOD/vox/computerstuff.vox" object="screen" scale=".35"/>
+				<screen name="b1pcscreen" tags="main b1pcscreen" pos="0.0 1.8 -0.05" rot="0.0 180.0 0.0" size="0.6 0.4" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 			</vox>
 			<vox pos="-0.8 2.8 6.7" rot="2.5 61.5 9.8" file="MOD/vox/modules.vox" object="metal part"/>
 			<vox pos="-0.6 2.9 7.1" rot="2.5 151.5 9.8" file="MOD/vox/modules.vox" object="metal part"/>
@@ -829,16 +836,16 @@
 			<vox pos="84.9 12.2 -0.1" file="MOD/vox/ksp1.vox" object="kspflag"/>
 			<vox pos="84.9 11.5 -3.4" rot="50.0 0.0 0.0" texture="12 2" file="MOD/vox/ksp2.vox" object="command pod">
 				<vox pos="0.0 -0.1 -3.0" texture="12 2" file="MOD/vox/ksp1.vox" object="mk1 crew cabin"/>
-				<vox pos="0.0 -0.1 -5.7" file="MOD/vox/ksp2.vox" object="fuel"/>
-				<vox pos="0.0 -2.4 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
-				<vox pos="0.0 2.2 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
+				<vox tags="explosive=5" pos="0.0 -0.1 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
+				<vox tags="explosive=5" pos="0.0 -2.4 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
+				<vox tags="explosive=5" pos="0.0 2.2 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
 				<vox pos="0.0 2.8 -6.7" texture="12 2" file="MOD/vox/ksp2.vox" object="engine"/>
 				<vox pos="0.0 0.6 -6.7" texture="12 2" file="MOD/vox/ksp2.vox" object="engine"/>
 				<vox pos="-2.4 0.6 -6.7" texture="12 2" file="MOD/vox/ksp2.vox" object="engine"/>
 				<vox pos="2.4 0.6 -6.7" texture="12 2" file="MOD/vox/ksp2.vox" object="engine"/>
 				<vox pos="0.0 -1.7 -6.7" texture="12 2" file="MOD/vox/ksp2.vox" object="engine"/>
-				<vox pos="-2.3 -0.1 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
-				<vox pos="2.3 -0.1 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
+				<vox tags="explosive=5" pos="-2.3 -0.1 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
+				<vox tags="explosive=5" pos="2.3 -0.1 -5.7" texture="12 2" file="MOD/vox/ksp2.vox" object="fuel"/>
 			</vox>
 		</group>
 	</group>
