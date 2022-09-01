@@ -580,13 +580,17 @@
 				<vox pos="-2.4 3.4 0.6" rot="-30.0 -90.0 0.0" file="MOD/vox/props.vox" object="tv">
 					<screen name="b1tv screen" tags="b1tvscreen" pos="0.05 0.65 -0.25" rot="0.0 -180.0 0.0" size="1.35 .9" bulge="0" resolution="1000 800" script="MOD/resources/scripts/tvImage5.lua" enabled="true" emissive="0.5" fxraster="0" fxnoise="0"/>
 				</vox>
-				<vox pos="-0.0 4.8 -0.1" file="MOD/vox/modules.vox" object="light">
-					<light pos="0.0 0.0 -0.05" color="0.23 0.73 1.0" scale="5" size=".2" reach="3"/>
-					<trigger pos="0.0 -3.8 -1.4" rot="0.0 -90.0 0.0" type="box" size="15 4 6" sound="MOD/resources/snd/creepyamb.ogg"/>
-				</vox>
-				<vox pos="0.00001 4.8 -5.9" file="MOD/vox/modules.vox" object="light">
-					<light pos="0.0 0.0 -0.05" color="0.23 0.73 1.0" scale="5" size=".2" reach="3"/>
-				</vox>
+				<script name="lightFlicker" pos="0.0 1.0 -1.5" file="MOD/resources/scripts/lightFlicker.lua" param0="blinkRate=16">
+					<vox tags="shape" pos="0.0 3.8 1.4" file="MOD/vox/modules.vox" object="light">
+						<light tags="light" pos="0.0 0.0 -0.05" color="0.23 0.73 1.0" scale="5" size=".2" reach="3" unshadowed="9" sound="MOD/resources/snd/buzz.ogg"/>
+						<trigger pos="0.0 -3.8 -1.4" rot="0.0 -90.0 0.0" type="box" size="15 4 6" sound="MOD/resources/snd/creepyamb.ogg"/>
+					</vox>
+				</script>
+				<script name="lightFlicker" pos="0.0 4.6 -6.0" file="MOD/resources/scripts/lightFlicker.lua" param0="blinkRate=20">
+					<vox tags="shape" pos="0.0 0.2 0.1" file="MOD/vox/modules.vox" object="light">
+						<light tags="light" pos="0.0 0.0 -0.05" color="0.23 0.73 1.0" scale="5" size=".2" reach="9" sound="MOD/resources/snd/buzz.ogg 9"/>
+					</vox>
+				</script>
 			</vox>
 			<vox pos="-0.2 -3.0 -0.1" rot="0.0 -180.0 0.0" file="MOD/vox/modules.vox" object="base2">
 				<vox pos="-2.4 3.4 0.6" rot="-26.5 -89.7 -9.4" file="MOD/vox/props.vox" object="tv">
